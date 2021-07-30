@@ -17,7 +17,7 @@ function Body() {
         return <AboutMe />;
       case "ContactMe":
         return <ContactMe />;
-      case "Project":
+      case "Projects":
         return <Projects />;
       default:
         return <Home />;
@@ -27,9 +27,13 @@ function Body() {
   const pageChange = (page) => setPage(page);
 
   return (
-    <div>
-      <Header page={page} pageChange={pageChange} />
-      {renderPage()}
+    <div className="content-container">
+      <div className="content-wrap">
+        <Header page={page} pageChange={pageChange} />
+        <main>
+          {renderPage()}
+          </main>
+      </div>
       <Footer page={page} pageChange={pageChange} />
     </div>
   );

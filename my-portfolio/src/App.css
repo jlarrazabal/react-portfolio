@@ -19,12 +19,27 @@
   scroll-behavior:smooth;
 }
 
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--color4);
+}
+
 main {
   background: var(--color4);
 }
 
 a {
   text-decoration: none;
+}
+
+.content-container{
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 5.375rem;
 }
 
 .title {
@@ -207,18 +222,28 @@ a {
 /* Footer Styles */
 footer {
   background-color: var(--color2);
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
 }
 
 .footer-links {
+  text-align: center;
+  padding: 0;
+}
+
+.footer-links a {
   flex-grow: 1;
   text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .copy-rights h6 {
   color: var(--color4);
-  padding: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 0;
   text-align: center;
 }
 
