@@ -10,7 +10,7 @@ function Footer(props) {
           <a href="#contact-me" onClick={()=>props.pageChange("ContactMe")}>Contact Me</a>
           <a href="https://jlarrazabal.github.io/Resume/" target="_blank" rel="noreferrer">Resume</a>
         </div>
-      <div class="copy-rights">
+      <div className="copy-rights">
         <h6>©Javier Larrazabal 2021</h6>
       </div>
     </footer>
