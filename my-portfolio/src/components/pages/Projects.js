@@ -54,7 +54,10 @@ function Projects(props) {
       <div className="flexbox">
         <article className="card">
           <h4 className="width-85"><a href={project.githubRepo} target="_blank" rel="noreferrer">{project.projectName}</a></h4>
-          <a href={project.appUrl} target="_blank" rel="noreferrer"><img className="width-85" src={project.imageSrc} alt={project.imageAlt}></img></a>
+          <div className="width-85" style={{marginLeft: "auto", marginRight: "auto"}}>
+          <a href={project.appUrl} target="_blank" rel="noreferrer"><img style={{width: "100%"}} src={project.imageSrc} alt={project.imageAlt}></img></a>
+          </div>
+
           <p className="width-85"><span>Summary: </span>{project.description}</p>
           </article>
       </div>

@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import validator from "validator";
 
 function ContactMe(props) {
 const [fullName, setFullName] = useState("");
@@ -12,9 +13,7 @@ const [emailErrorMsg, setEmailErrorMsg] = useState("");
 const [messageTextErrorMsg, setMessageTextErrorMsg] = useState("");
 
 const validateEmail = (value) => {
-  const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-  console.log(regex.test(String(value).toLowerCase()));
-  return regex.test(String(value).toLowerCase());
+  return validator.isEmail(value)? false : true;
 }
 
 const validateFullName = (value) => {
@@ -74,7 +73,7 @@ const handleMessageTextError = () => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     // Alert the user their first and last name, clear the inputs
-    alert(`Hello, ${fullName} your message [${messageText}] has submitted successfully. You will receive answer as soon as possible on ${email}.`);
+    alert(`Hello, ${fullName} your message [${messageText}] has been submitted successfully. You will receive answer as soon as possible on ${email}.`);
     setEmail("");
     setEmailError(true);
     setFullName("");
@@ -87,17 +86,17 @@ const handleMessageTextError = () => {
       <form>
       <div className="mb-3">
         <label for="fullName" className="form-label">Name:</label>
-        <input type="email" className="form-control" id="fullName" name="fullName" placeholder="Name" onChange={handleInputChange}></input>
+        <input type="email" className="form-control" id="fullName" name="fullName" placeholder="Name" onChange={handleInputChange} value={fullName}></input>
         <p>{fullNameErrorMsg}</p>
       </div>
         <div className="mb-3">
           <label for="email" className="form-label">Email address</label>
-          <input type="email" className="form-control" id="email" name="email" placeholder="name@example.com" onChange={handleInputChange}></input>
+          <input type="email" className="form-control" id="email" name="email" placeholder="name@example.com" onChange={handleInputChange} value={email}></input>
           <p>{emailErrorMsg}</p>
         </div>
         <div className="mb-3">
           <label for="messageText" className="form-label">Message</label>
-          <textarea className="form-control" id="messageText" name="messageText" rows="3" onChange={handleInputChange}></textarea>
+          <textarea className="form-control" id="messageText" name="messageText" rows="3" onChange={handleInputChange} value={messageText}></textarea>
           <p>{messageTextErrorMsg}</p>
         </div>
         <div className="mb-3">
