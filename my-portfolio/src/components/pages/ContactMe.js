@@ -103,6 +103,12 @@ const handleMessageTextError = () => {
           <button disabled={fullNameError || emailError || messageTextError} className="btn btn-lg btn-primary" type="button" onClick={handleFormSubmit}>Submit</button>
         </div>
       </form>
+      <h2 id="contact-me" className="title">Links</h2>
+      <div className="flexbox adjusted contact-me-links">
+        <a href="mailto:javier.larrazabal1988@gmail.com" className="contact-link">Email</a>
+        <a href="https://github.com/jlarrazabal" target="_blank" className="contact-link" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/javier-larrazabal-70ba6825/?locale=en_US" target="_blank" className="contact-link" rel="noreferrer">LinkedIn</a>
+      </div>
     </section>
   );
 }
