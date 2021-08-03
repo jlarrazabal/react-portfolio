@@ -8,4 +8,4 @@ This app was build using React!
 
 ## Deployed App Link:
 
-[My Portfolio]()
+[My Portfolio](https://jlarrazabal.github.io/react-portfolio/)
